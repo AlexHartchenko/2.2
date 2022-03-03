@@ -1,23 +1,17 @@
 package ru.netology
 
-import java.lang.StringBuilder
-import java.util.Scanner
-
 fun main() {
-    val scanner = Scanner(System.`in`)
-    println("Количество LIKE:")
-    val likes = scanner.nextInt()
-    val result = StringBuilder()
-        .append(likes)
-        .append(" ")
-        .append(likesPostFix(likes))
-    println("Понравилось $result")
+    val likes = 23
+    println("Понравилось $likes ${likesPostFix(likes)}")
 }
 
 fun likesPostFix(likes: Int): String {
-    return if (likes.toString().endsWith("1")) {
+    return if (likes % 2 == 1 && likes.toString().endsWith("11")) {
+        "людям"
+    } else if (likes.toString().endsWith("1")) {
         "человеку"
     } else {
         "людям"
     }
 }
+
